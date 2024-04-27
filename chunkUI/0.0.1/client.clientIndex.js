@@ -114,6 +114,22 @@ class ChunkUI {
                 return Object.assign(node, params);
             },
             /**
+             * @description 设置UiNode的Coord2属性
+             * @param {UiBox|UiImage|UiInput|UiScale|UiText} node UiNode
+             * @param {object} params UiNode的Coord2属性
+             * @returns {UiBox|UiImage|UiInput|UiScale|UiText} UiNode
+             */
+            configCoord2(node, params) {
+                for (var [key, value] of Object.entries(params)) {
+                    var nodeParam = node;
+                    for (var k of key.split(".")) {
+                        nodeParam = nodeParam[k];
+                    }
+                    nodeParam.copy(value);
+                }
+                return node;
+            },
+            /**
              * @description 创建子UiNode
              * @param {class} type 子UiNode的类型
              * @param {object} params 子UiNode的属性
@@ -184,7 +200,7 @@ class ChunkUI {
                     var childrenTree = [];
                     for (var c of parent.children) {
                         childrenTree.push({
-                            node: c,
+                            nodeName: c.name,
                             children: this.getUiNodeNameTree(c)
                         });
                     }
