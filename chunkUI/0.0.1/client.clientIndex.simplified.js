@@ -42,6 +42,14 @@ class ChunkUI {
             unmountUiNode(...node) {for (var n of node) n.parent = undefined;},
             rendered(node) {while (node !== ui && node.parent) node = node.parent;return node === ui;},
             config(node, params) {return Object.assign(node, params);},
+            configCoord2(node, params) {
+                for (var [key, value] of Object.entries(params)) {
+                    var nodeParam = node;
+                    for (var k of key.split(".")) nodeParam = nodeParam[k];
+                    nodeParam.copy(value);
+                }
+                return node;
+            },
             createChildUiNode(type, params, parent) {return this.config(this.createUiNode(type, params), { parent: parent });},
             addChildUiNode(parent, ...child) {for (var c of child) c.parent = parent;return parent;},
             removeAllChildUiNode(parent) {for (var c of parent.children) c.parent = undefined;return parent;},
@@ -61,7 +69,7 @@ class ChunkUI {
                 },
                 getUiNodeNameTree(parent) {
                     var childrenTree = [];
-                    for (var c of parent.children) childrenTree.push({node: c, children: this.getUiNodeNameTree(c)});
+                    for (var c of parent.children) childrenTree.push({nodeName: c.name, children: this.getUiNodeNameTree(c)});
                     return {nodeName: parent.name,children: childrenTree}
                 }
             },
