@@ -1,0 +1,22 @@
+文件说明：
+    1.client.clientIndex.js             客户端clientIndex代码文件
+    2.client.clientIndex.simplified.js  客户端clientIndex简化版代码文件
+    3.API使用说明                        API使用说明
+简略API说明（其他说明请看JsDoc，正式版会有API详细说明）：
+关键帧动画样例：
+var text = chunkUI.uiTools.createChildUiNode(UiText, { name: "textA", textContent: "UI文本" }, ui);
+var animate = chunkUI.uiTools.animation.keyframesAnimate([
+	{ keyframe: [{ node: text, frame: { textFontSize: 4 } }] },
+    { keyframe: [{ node: text, frame: { textFontSize: 40 } }] }
+], {
+    iterations: 1,
+    duration: 16 * 5
+});
+关键帧数据格式：
+[
+    { keyframe: [{node: node, frame: { param: value, ... }, ...], duration: duration }
+    ...
+], {
+    iterations: iterations,
+    duration: duration
+}
