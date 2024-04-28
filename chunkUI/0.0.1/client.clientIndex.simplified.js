@@ -70,7 +70,7 @@ class ChunkUI {
                 getUiNodeNameTree(parent) {
                     var childrenTree = [];
                     for (var c of parent.children) childrenTree.push({nodeName: c.name, children: this.getUiNodeNameTree(c)});
-                    return {nodeName: parent.name,children: childrenTree}
+                    return {nodeName: parent.name, children: childrenTree}
                 }
             },
             animation: {keyframesAnimate(keyframes, playbackInfo) {return new keyframesAnimate(keyframes, playbackInfo);}}
