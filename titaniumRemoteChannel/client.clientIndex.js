@@ -121,6 +121,12 @@ class ClientTitaniumRemoteChannel {
             }
         });
     }
+    /**
+     * @description 获取接收到的信息
+     */
+    getChannelData(){
+        return this.#channelData;
+    }
 }
 /**
  * @description 客户端Titanium端信息传递工具
