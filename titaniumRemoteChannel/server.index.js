@@ -140,7 +140,7 @@ class ServerTitaniumRemoteChannel {
     }
 }
 /**
- * @description 客户端Titanium端信息传递工具
+ * @description 服务端Titanium端信息传递工具
  */
 const titaniumRemoteChannel = new ServerTitaniumRemoteChannel();
 //开始监听客户端信息
