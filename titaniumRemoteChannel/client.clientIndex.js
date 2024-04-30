@@ -125,6 +125,7 @@ class ClientTitaniumRemoteChannel {
 /**
  * @description 客户端Titanium端信息传递工具
  */
-//开始监听客户端信息
+const titaniumRemoteChannel = new ClientTitaniumRemoteChannel({ "specialGetDemo":"specialGet代码运行成功", "this": 1, "eventDemo": () => { console.log("event") } });
+//开始监听服务端信息
 titaniumRemoteChannel.listen();
 //在这行注释后面可以调用titaniumRemoteChannel...
