@@ -138,6 +138,12 @@ class ServerTitaniumRemoteChannel {
             }
         });
     }
+    /**
+     * @description 获取接收到的信息
+     */
+    getChannelData(){
+        return this.#channelData;
+    }
 }
 /**
  * @description 服务端Titanium端信息传递工具
