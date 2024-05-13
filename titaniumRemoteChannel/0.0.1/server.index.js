@@ -6,6 +6,10 @@
 //@license  BSD-3-Clause
 //Copyright (c) 2024, L.W.Kevin0wvf
 //用途：端信息传递API。
+
+"use strict";
+console.clear();
+
 class ServerTitaniumRemoteChannel {
     #channelData
     constructor(datas = {}) {
