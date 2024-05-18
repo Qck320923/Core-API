@@ -102,6 +102,7 @@ class ClientTitaniumRemoteChannel {
      * @description 监听端传递信息
      */
     listen() {
+        if (this.listened) return;
         this.listened = true;
         remoteChannel.events.on("client", (args) => {
             titaniumRemoteChannel.titaniumLog(`客户端收到服务端${args.type}：${JSON.stringify(args)}`);
