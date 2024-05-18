@@ -2,7 +2,7 @@
 //@name     Titanium RemoteChannel
 //@class    RemoteChannel API
 //@parent   Core
-//@version  v0.0.2
+//@version  v1.0.0
 //@author   L.W.Kevin0wvf
 //@license  BSD-3-Clause
 //Copyright (c) 2024, L.W.Kevin0wvf
