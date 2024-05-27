@@ -1,7 +1,7 @@
 # 已经发布：
-* Chunk UI
-* Titanium RemoteChannel
-* Iridium Voxels
+* Chunk UI（2024.4.27发布）
+* Titanium RemoteChannel（2024.4.30发布）
+* Iridium Voxels（2024.5.27发布）
 
 # 更新计划：
 * Chunk UI（动画系统更新）
