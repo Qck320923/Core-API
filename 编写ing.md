@@ -1,5 +1,13 @@
-# 即将发布：
+# 已经发布：
+* Chunk UI
+* Titanium RemoteChannel
 * Iridium Voxels
+
+# 更新计划：
+* Chunk UI（动画系统更新）
+
+# 即将发布：
+* 暂无
 
 # 正在编写：
 * Tungsten Storage
