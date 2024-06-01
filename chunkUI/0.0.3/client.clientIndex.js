@@ -345,45 +345,6 @@ class PioneerKeyframesAnimate {
     }
 }
 
-/**
- * @description 帧动画
- * 
- * ##### 如果帧数据不变：fps越小duration越短，播放速度越快；fps越大duration越长，播放速度越慢。
- * 不同于其他动画类型，playbackInfo参数改在play方法中传入，且使用fps代替duration，playbackInfo中不需要duration属性。
- */
-class FramesAnimate {
-    #frames
-    #finished
-    #animation
-    constructor(frames, fps = 16) {
-        this.#frames = frames;
-        this.fps = fps;
-        this.progress = 0;
-        this.#finished = true;
-    }
-    /**
-     * @description 播放动画
-     * @param playbackInfo 播放信息
-     */
-    play(playbackInfo) {
-        while (this.progress <= (this.#frames.length * playbackInfo.iterations)) {
-            await sleep(1000 / this.fps);
-        }
-    }
-    /**
-     * @description 动画帧数据
-     */
-    get frames() {
-        return this.#frames;
-    }
-    /**
-     * @description 动画是否结束
-     */
-    get finished() {
-        return this.#finished;
-    }
-}
-
 //创建chunkUI
 /**
  * @description 客户端UI工具
