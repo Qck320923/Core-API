@@ -24,7 +24,7 @@ class PioneerKeyframesAnimate {
     constructor(keyframes, playbackInfo) {
         this.#keyframes = keyframes;
         this.#playbackInfo = playbackInfo;
-        this.#fps = 16;
+        this.fps = 16;
         this.#progress = 0;
         this.#beginFrame = [0];
         for (var keyframe of this.#keyframes.slice(1)) {
