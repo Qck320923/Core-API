@@ -59,9 +59,6 @@ class PioneerKeyframesAnimate {
                 //重新初始化
                 for (var info of this.#keyframes[0].keyframe) for (var [key, value] of Object.entries(info.frame)) {
                     var param = info.node;
-                    // for (var p of key.split(".")) param = param[p];
-                    // param = value;
-                    //上面代码不行，不能实际修改对象的属性，下面代码才能修改深层属性
                     for (var i = 0; i < key.split(".").length - 1; i++) param = param[key.split(".")[i]];
                     param[key.split(".")[key.split(".").length - 1]] = value;
                 }
