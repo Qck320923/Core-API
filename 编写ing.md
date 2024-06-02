@@ -2,7 +2,7 @@
 * Chunk UI（2024.4.27发布）
 * Titanium RemoteChannel（2024.4.30发布）
 * Iridium Voxels（2024.5.27发布）
-* PioneerKeyframesAnimate（2024.6.1独立）
+* PioneerKeyframesAnimate（2024.6.1停更）
 * Supernova UI Animations（2024.6.1发布）
 
 # 更新计划：
