@@ -12,11 +12,12 @@
 * 暂无
 
 # 正在编写：
-* Tungsten Storage
-
+* Nonlinear Frames Animate - 非线性帧动画（测试版）
+* Voxels Animate - 方块动画
+* UI Canvas - UI画布
+* Tungsten Storage - storage存储
 * Core-API使用指南（gitbook）
-
-* Plutonium Functions
+* Plutonium Functions - 便捷函数库
 
 # 将要编写：
 * 【代码模板库】神岛版三维JPS寻路算法
