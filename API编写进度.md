@@ -1,14 +1,14 @@
 # 已经发布：
-* Chunk UI（2024.4.27发布）
-* Titanium RemoteChannel（2024.4.30发布）
-* Iridium Voxels（2024.5.27发布）
-* PioneerKeyframesAnimate（2024.6.1停更）
-* Supernova UI Animations（2024.6.1发布）
-* Frames Animate（不详）
-* Keyframes Animate（不详）
-* Flerovium Dialog（2024.6.7发布）
-* Voxel Animate（2024.6.9发布）
-* Tungsten Storage（2024.6.11发布）
+* 1.Chunk UI（2024.4.27发布）
+* 2.Titanium RemoteChannel（2024.4.30发布）
+* 3.Iridium Voxels（2024.5.27发布）
+* 4.PioneerKeyframesAnimate（2024.6.1停更）
+* 5.Supernova UI Animations（2024.6.1发布）
+  * ①Frames Animate（2024.6.1发布）
+  * ②Keyframes Animate（不详，忘了）
+* 6.Flerovium Dialog（2024.6.7发布）
+* 7.Voxel Animate（2024.6.9发布）
+* 8.Tungsten Storage（2024.6.11发布）
 
 # 更新计划：
 * Supernova UI Animations（动画类型更新、动画功能增强）
