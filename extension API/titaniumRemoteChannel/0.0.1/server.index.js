@@ -3,7 +3,7 @@
 //@parent   Core
 //@version  v0.0.1
 //@author   L.W.Kevin0wvf
-//@license  BSD-3-Clause
+//@license  MIT
 //Copyright (c) 2024, L.W.Kevin0wvf
 //用途：端信息传递API。
 
