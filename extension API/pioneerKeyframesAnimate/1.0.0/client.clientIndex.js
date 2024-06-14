@@ -4,7 +4,7 @@
 //@parent   Core
 //@version  v1.0.0
 //@author   L.W.Kevin0wvf
-//@license  BSD-3-Clause
+//@license  MIT
 //Copyright (c) 2024, L.W.Kevin0wvf
 //用途：按关键帧播放UI动画。
 /*
