@@ -4,7 +4,7 @@
 //@parent   Core
 //@version  v0.0.3
 //@author   L.W.Kevin0wvf
-//@license  BSD-3-Clause
+//@license  MIT
 //Copyright (c) 2024, L.W.Kevin0wvf
 //用途：简化UI代码，使用更方便。（简便）
 /*
