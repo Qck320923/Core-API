@@ -14,7 +14,7 @@ v0.0.1 - 完成基础方法并通过测试。
 
 "use strict";
 console.clear();
-//方块动画：1.frames: [帧数据（getVoxelId三维数组（id带方向））, ...]2.播放方式：指定最小点坐标播放
+
 class VoxelsAnimate {
     #fps
     #finished = true
