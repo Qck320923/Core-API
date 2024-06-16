@@ -1,4 +1,4 @@
-# 已经发布：
+# 已经发布(共计10个子API)：
 * 1.Chunk UI（2024.4.27发布）
 * 2.Titanium RemoteChannel（2024.4.30发布）
 * 3.Iridium Voxels（2024.5.27发布）
