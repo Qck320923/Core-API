@@ -19,9 +19,9 @@
 # 正在编写：
 * Nonlinear Frames Animate - 非线性帧动画
 * UI Canvas - UI画布
-* Tungsten Storage - storage存储
 * Core-API使用指南（gitbook）
 * Plutonium Functions - 便捷函数库
 
 # 将要编写：
+* Tungsten Storage - storage存储
 * 【代码模板库】神岛版三维JPS寻路算法（很久之后）
