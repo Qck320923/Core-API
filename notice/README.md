@@ -1,2 +1,2 @@
 # notice 简介
-Core-API公告。
+本文档为Core-API公告。
