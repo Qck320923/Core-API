@@ -142,7 +142,7 @@ class IridiumVoxels {
             for (var x = data.sx; x <= data.ex; x++) {
                 for (var y = data.sy; y <= data.ey; y++) {
                     for (var z = data.sz; z <= data.ez; z++) {
-                        voxels.setVoxelId(sx + x, sy + y, sz + z, (![undefined, null].includes(options.background) ? options.background : 0));
+                        voxels.setVoxelId(sx + x, sy + y, sz + z, ((![undefined, null].includes(options.background)) ? options.background : 0));
                     }
                 }
             }
