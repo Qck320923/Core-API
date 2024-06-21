@@ -142,11 +142,11 @@ class IridiumVoxels {
             for (var x = data.sx; x <= data.ex; x++) {
                 for (var y = data.sy; y <= data.ey; y++) {
                     for (var z = data.sz; z <= data.ez; z++) {
-                        voxels.setVoxelId(sx + x, sy + y, sz + z, (options.background !== null ? options.background : 0));
+                        voxels.setVoxelId(sx + x, sy + y, sz + z, (![undefined, null].includes(options.background) ? options.background : 0));
                     }
                 }
             }
-        } else if (options.background !== null) {
+        } else if (![undefined, null].includes(options.background)) {
             var bounds = this.bounds(data);
             for (var x = bounds.lo.x; x <= bounds.hi.x; x++) {
                 for (var y = bounds.lo.y; y <= bounds.hi.y; y++) {
