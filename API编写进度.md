@@ -1,4 +1,4 @@
-# 已经发布(共计10个子API)：
+# 已经发布(共计11个子API)：
 * 1.Chunk UI（2024.4.27发布）
 * 2.Titanium RemoteChannel（2024.4.30发布）
 * 3.Iridium Voxels（2024.5.27发布）
@@ -6,6 +6,7 @@
 * 5.Supernova UI Animations（2024.6.1发布）
   * ①Frames Animate（2024.6.1发布）
   * ②Keyframes Animate（不详，忘了）
+  * ③Nonlinear Ease Function Frames Animate（2024.6.20发布）
 * 6.Flerovium Dialog（2024.6.7发布）
 * 7.Voxel Animate（2024.6.9发布）
 * 8.Tungsten Storage（2024.6.11发布）
