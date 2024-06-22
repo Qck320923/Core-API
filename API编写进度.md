@@ -13,7 +13,7 @@
 
 # 更新计划：
 * Supernova UI Animations（动画类型更新、动画功能增强）
-* Iridium Voxels（附加柏林噪声算法）
+* Iridium Voxels（附加柏林噪声算法、添加三维数组格式方块数据）
 
 # 即将发布：
 * 暂无
