@@ -19,7 +19,6 @@
 * 暂无
 
 # 正在编写：
-* Nonlinear Frames Animate - 非线性帧动画
 * UI Canvas - UI画布
 * Core-API使用指南（gitbook）
 * Plutonium Functions - 便捷函数库
