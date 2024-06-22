@@ -2,7 +2,7 @@
 * 1.Chunk UI（2024.4.27发布）
 * 2.Titanium RemoteChannel（2024.4.30发布）
 * 3.Iridium Voxels（2024.5.27发布）
-* 4.PioneerKeyframesAnimate（2024.6.1停更）
+* 4.Pioneer Keyframes Animate（2024.6.1停更）
 * 5.Supernova UI Animations（2024.6.1发布）
   * ①Frames Animate（2024.6.1发布）
   * ②Keyframes Animate（不详，忘了）
@@ -13,6 +13,7 @@
 
 # 更新计划：
 * Supernova UI Animations（动画类型更新、动画功能增强）
+* Iridium Voxels（附加柏林噪声算法）
 
 # 即将发布：
 * 暂无
