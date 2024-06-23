@@ -1,4 +1,4 @@
-# 已经发布(共计11个子API)：
+# 已经发布(共计1个基础API、12个子API)：
 * 1.Chunk UI（2024.4.27发布）
 * 2.Titanium RemoteChannel（2024.4.30发布）
 * 3.Iridium Voxels（2024.5.27发布）
@@ -10,6 +10,8 @@
 * 6.Flerovium Dialog（2024.6.7发布）
 * 7.Voxel Animate（2024.6.9发布）
 * 8.Tungsten Storage（2024.6.11发布）
+* 9.Plutonium Functions（2024.6.23发布）
+* 10.Carbon Core Base（2024.6.23发布）
 
 # 更新计划：
 * Supernova UI Animations（动画类型更新、动画功能增强）
