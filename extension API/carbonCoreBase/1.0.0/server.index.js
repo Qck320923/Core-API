@@ -16,7 +16,8 @@ v1.0.0 - 完成基础语法。
 console.clear();
 
 class CarbonCoreBase {
-    version = {
+    version = "1.0.0"
+    versions = {
         /**
          * @description 版本号1是否比版本号2更新
          * @param {string} v1 版本号1
