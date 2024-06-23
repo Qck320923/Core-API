@@ -149,10 +149,10 @@ class FramesAnimate {
 //“超新星”系列关键帧动画API
 //@name     KeyframesAnimate
 //@class    UIAnimation API
-//@parent   Core - SupernovaAnimations
+//@parent   Core - SupernovaAnimations - FramesAnimate
 //@version  v1.0.2
 //@author   L.W.Kevin0wvf
-//@license  BSD-3-Clause
+//@license  MIT
 //Copyright (c) 2024, L.W.Kevin0wvf
 //用途：按帧播放UI动画。
 /*
