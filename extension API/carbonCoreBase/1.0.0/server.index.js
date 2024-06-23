@@ -19,14 +19,14 @@ class CarbonCoreBase {
     version = "1.0.0"
     versions = {
         /**
-         * @description 版本号1是否比版本号2更新
+         * @description 比较版本号
          * @param {string} v1 版本号1
          * @param {string} v2 版本号2
          * @returns {boolean}
          */
-        newer(v1, v2) {
+        compare(v1, v2, cmp) {
             var vA = v1.split("."), vB = v2.split("."), len = Math.min(vA.length, vB.length);
-            for (var i = 0; i < len; i++) if (vA[i] > vB[i]) return true;
+            for (var i = 0; i < len; i++) if (cmp(vA[i], vB[i])) return true;
             return false;
         }
     }
