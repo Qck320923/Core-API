@@ -148,7 +148,7 @@ class FramesAnimate {
 //“超新星”系列非线性缓动函数帧动画API
 //@name     NonlinearEaseFunctionFramesAnimate
 //@class    UIAnimation API
-//@parent   Core - SupernovaAnimations
+//@parent   Core - SupernovaAnimations - FramesAnimate
 //@version  v1.0.0
 //@author   L.W.Kevin0wvf
 //@license  MIT
