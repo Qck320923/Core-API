@@ -37,6 +37,3 @@ class CarbonCoreBase {
 const carbonCoreBase = new CarbonCoreBase();
 globalThis.carbonCoreBase = carbonCoreBase;
 //在这行注释后面可以调用carbonCoreBase...
-
-
-
