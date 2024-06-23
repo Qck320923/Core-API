@@ -126,7 +126,7 @@ class PlutoniumFunctions {
                 if (!list.length || count <= 0) return [];
                 var res = [];
                 for (let i = 1; i < count; i++) {
-                    res = result.concat(list);
+                    res = res.concat(list);
                 }
                 return res;
             }
