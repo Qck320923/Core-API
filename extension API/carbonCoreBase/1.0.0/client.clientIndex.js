@@ -26,7 +26,7 @@ class CarbonCoreBase {
          */
         compare(v1, v2, cmp) {
             var vA = v1.split("."), vB = v2.split("."), len = Math.min(vA.length, vB.length);
-            for (var i = 0; i < len; i++) if (cmp(vA[i], vB[i])) return true;
+            for (var i = 0; i < len; i++) if (cmp(Number(vA[i]), Number(vB[i]))) return true;
             return false;
         }
     }
