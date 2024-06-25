@@ -324,18 +324,18 @@ class IridiumVoxels {
                 water = options.water ? options.water : "water";
             var sizeX = ex - sx + 1, sizeZ = ez - sz + 1, dat = plutoniumFunctions.improved2DPerlinNoise.generateHeight(sizeX, sizeZ, quality, k);
             for (let x = sx; x <= ex; x++) {
-                for (let z = sz; z <= ez; z++) {
+                for (let z = 0; z <= sizeZ; z++) {
                     const index = x + z * sizeX;
                     var y = Math.round(dat[index] / smooth + minHeight);
-                    if (y > waterLevel) voxels.setVoxel(x, y, z, grass);
-                    else if (y == waterLevel) voxels.setVoxel(x, y, z, sand);
+                    if (y > waterLevel) voxels.setVoxel(sx + x, y, sz + z, grass);
+                    else if (y == waterLevel) voxels.setVoxel(sx + x, y, sz + z, sand);
                     else {
-                        voxels.setVoxel(x, y, z, dirt);
+                        voxels.setVoxel(sx + x, y, sz + z, dirt);
                         for (let s = y + 1; s <= waterLevel; s++) {
-                            voxels.setVoxel(x, s, z, water);
+                            voxels.setVoxel(sx + x, s, sz + z, water);
                         }
                     }
-                    for (let s = minHeight - 1; s < y; s++) voxels.setVoxel(x, s, z, dirt);
+                    for (let s = minHeight - 1; s < y; s++) voxels.setVoxel(sx + x, s, sz + z, dirt);
                 }
             }
             if (tree) this.spawnTree();
