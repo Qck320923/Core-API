@@ -323,8 +323,8 @@ class IridiumVoxels {
                 sand = options.sand ? options.sand : "sand",
                 water = options.water ? options.water : "water";
             var sizeX = ex - sx + 1, sizeZ = ez - sz + 1, dat = plutoniumFunctions.improved2DPerlinNoise.generateHeight(sizeX, sizeZ, quality, k);
-            for (let x = 0; x < sizeX; x++) {
-                for (let z = 0; z < sizeZ; z++) {
+            for (let x = sx; x <= ex; x++) {
+                for (let z = sz; z <= ez; z++) {
                     const index = x + z * sizeX;
                     var y = Math.round(dat[index] / smooth + minHeight);
                     if (y > waterLevel) voxels.setVoxel(x, y, z, grass);
