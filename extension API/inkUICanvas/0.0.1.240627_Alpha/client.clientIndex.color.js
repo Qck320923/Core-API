@@ -1,12 +1,14 @@
-const EPSILON$2 = Number.EPSILON;//容差
-//相较原版GameRGBColor和GameRGBAColor新增功能：
-//RGBHex转RGB（去掉#，r、g、b分别转十进制0~255整数）√
-//RGBHex转RGBA（去掉#，r、g、b分别转十进制0~255整数，a为255）√
-//RGBHex转ARGBHex（#ff+去掉#）√
-//ARGBHex转RGBA（去掉#，a、r、g、b分别转十进制0~255整数，排列为r、g、b、a）√
-//RGB转RGBHex（#+r、g、b分别转十六进制"00"~"ff"字符串）√
-//RGB转ARGBHex（#ff+r、g、b分别转十六进制"00"~"ff"字符串）√
-//RGBA转ARGBHex（#+r、g、b、a分别转十六进制"00"~"ff"字符串，排列为a、r、g、b）√
+const EPSILON$2 = Number.EPSILON;/*容差*/
+/*
+相较原版GameRGBColor和GameRGBAColor新增功能：
+RGBHex转RGB（去掉#，r、g、b分别转十进制0~255整数）√
+RGBHex转RGBA（去掉#，r、g、b分别转十进制0~255整数，a为255）√
+RGBHex转ARGBHex（#ff+去掉#）√
+ARGBHex转RGBA（去掉#，a、r、g、b分别转十进制0~255整数，排列为r、g、b、a）√
+RGB转RGBHex（#+r、g、b分别转十六进制"00"~"ff"字符串）√
+RGB转ARGBHex（#ff+r、g、b分别转十六进制"00"~"ff"字符串）√
+RGBA转ARGBHex（#+r、g、b、a分别转十六进制"00"~"ff"字符串，排列为a、r、g、b）√
+*/
 /**
  * @description GameRGBColor稍作修改后的类，R、G、B范围从0-1改为0-255
  */
