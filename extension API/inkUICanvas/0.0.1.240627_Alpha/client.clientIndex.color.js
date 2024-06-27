@@ -9,10 +9,11 @@ RGB转RGBHex（#+r、g、b分别转十六进制"00"~"ff"字符串）√
 RGB转ARGBHex（#ff+r、g、b分别转十六进制"00"~"ff"字符串）√
 RGBA转ARGBHex（#+r、g、b、a分别转十六进制"00"~"ff"字符串，排列为a、r、g、b）√
 */
+class Color { }
 /**
  * @description GameRGBColor稍作修改后的类，R、G、B范围从0-1改为0-255
  */
-class RGBColor {
+class RGBColor extends Color {
     static random() { return new RGBColor(Math.random(), Math.random(), Math.random()); }
     set(r, g, b) {
         this.r = Math.max(0, Math.min(r, 255));
@@ -58,7 +59,7 @@ class RGBColor {
     equals(rgb) { return Math.abs(this.r - rgb.r) < EPSILON$2 && Math.abs(this.g - rgb.g) < EPSILON$2 && Math.abs(this.b - rgb.b) < EPSILON$2; }
     clone() { return new RGBColor(this.r, this.g, this.b); }
     toRGBA() { return new RGBAColor(this.r, this.g, this.b, 255); }
-    toString() { return `{ r:${this.r}, g:${this.g}, b:${this.b} }`; }
+    toString() { return `rgb(${this.r},${this.g},${this.b})`; }
     toRGBHexColor() { return new RGBHexColor("#" + this.r.toString(16).padStart(2, '0') + this.g.toString(16).padStart(2, '0') + this.b.toString(16).padStart(2, '0')); }
     toARGBHexColor() { return new ARGBHexColor("#ff" + this.r.toString(16).padStart(2, '0') + this.g.toString(16).padStart(2, '0') + this.b.toString(16).padStart(2, '0')); }
     constructor(r, g, b) {
@@ -70,7 +71,7 @@ class RGBColor {
 /**
  * @description GameRGBAColor稍作修改后的类，R、G、B、A范围从0~1改为0~255
  */
-class RGBAColor {
+class RGBAColor extends Color {
     set(r, g, b, a) {
         this.r = Math.max(0, Math.min(r, 255));
         this.g = Math.max(0, Math.min(g, 255));
@@ -125,7 +126,7 @@ class RGBAColor {
     }
     equals(rgba) { return Math.abs(this.r - rgba.r) < EPSILON$2 && Math.abs(this.g - rgba.g) < EPSILON$2 && Math.abs(this.b - rgba.b) < EPSILON$2 && Math.abs(this.a - rgba.a) < EPSILON$2; }
     clone() { return new RGBAColor(this.r, this.g, this.b, this.a); }
-    toString() { return `{ r:${this.r}, g:${this.g}, b:${this.b}, a:${this.a} }`; }
+    toString() { return `rgba(${this.r},${this.g},${this.b},${this.a})`; }
     toARGBHexColor() { return new RGBHexColor("#" + this.a.toString(16).padStart(2, '0') + this.r.toString(16).padStart(2, '0') + this.g.toString(16).padStart(2, '0') + this.b.toString(16).padStart(2, '0')); }
     constructor(r, g, b, a) {
         this.r = Math.max(0, Math.min(r, 255));
@@ -134,17 +135,19 @@ class RGBAColor {
         this.a = Math.max(0, Math.min(a, 255));
     }
 }
-class RGBHexColor {
+class RGBHexColor extends Color {
     constructor(hex) {
         this.hex = hex.toLowerCase();
     }
     toRGBColor() { return new RGBColor(parseInt(this.hex.slice(1, 3), 16), parseInt(this.hex.slice(3, 5), 16), parseInt(this.hex.slice(5), 16)); }
     toRGBAColor() { return new RGBAColor(parseInt(this.hex.slice(1, 3), 16), parseInt(this.hex.slice(3, 5), 16), parseInt(this.hex.slice(5), 16), 255); }
     toARGBHexColor() { return new ARGBHexColor("#ff" + this.hex.slice(1)); }
+    toString() { return this.hex; }
 }
-class ARGBHexColor {
+class ARGBHexColor extends Color {
     constructor(hex) {
         this.hex = hex.toLowerCase();
     }
     toRGBAColor() { return new RGBAColor(parseInt(this.hex.slice(3, 5), 16), parseInt(this.hex.slice(5, 7), 16), parseInt(this.hex.slice(7, 9), 16), parseInt(this.hex.slice(1, 3), 16)); }
+    toString() { return this.hex; }
 }
