@@ -27,7 +27,7 @@ class InkUICanvas {
         pixel.position.offset.x = this.position.x + x;
         pixel.position.offset.y = this.position.y + y;
         if ((this.position.x + x) >= this.width || (this.position.y + y) >= this.height) pixel.visible = false;
-        if (style instanceof Color) {
+        if (style instanceof Color || typeof color === "string") {
             var color = style;
             if (color instanceof RGBColor) color = color.toRGBAColor();
             else if (color instanceof RGBHexColor) color = color.toRGBAColor();
