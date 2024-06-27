@@ -26,9 +26,11 @@
 
 # 正在编写：
 * UI Canvas - UI画布
-* Core-API使用指南（gitbook）
 * Plutonium Functions - 便捷函数库
+* Iridium Voxels - 地形控制
+* Core-API使用指南（gitbook）
 
 # 将要编写：
+* Supernova UI Animations - UI动画
 * Tungsten Storage - storage存储
 * 【代码模板库】神岛版三维JPS寻路算法（很久之后）
