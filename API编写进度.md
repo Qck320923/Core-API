@@ -13,9 +13,13 @@
 * 9.Plutonium Functions（2024.6.23发布）
 * 10.Carbon Core Base（2024.6.23发布）
 
+# 正在测试：
+* Ink UI Canvas - 0.0.1.240627_Alpha
+
 # 更新计划：
-* Supernova UI Animations（动画类型更新、动画功能增强）
-* Iridium Voxels（附加柏林噪声算法、添加三维数组格式方块数据）
+* Supernova UI Animations（贝塞尔曲线型非线性动画、动画类型更新、动画功能增强）
+* Iridium Voxels（添加三维数组格式方块数据、联动Plutonium的压缩功能）
+* Plutonium Functions（添加编码、解码（包括压缩）功能、贝塞尔曲线函数）（分为server版和client版，server版含有目前计划的所有的函数，client版去掉柏林噪声）
 
 # 即将发布：
 * 暂无
