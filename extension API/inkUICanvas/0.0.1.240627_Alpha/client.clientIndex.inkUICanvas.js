@@ -1,5 +1,5 @@
 /**
- * @description “墨水”UI画布，参考HTML5中canvas的方法编写，降低入门难度。
+ * @description “墨水”UI画布，参考HTML5中canvas的语法编写，降低入门难度。
  * ##### position为固定位置(offset)。
  */
 class InkUICanvas {
