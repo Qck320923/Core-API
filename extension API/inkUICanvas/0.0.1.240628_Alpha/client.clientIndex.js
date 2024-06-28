@@ -318,17 +318,17 @@ const ColorCode = {
 class InkUICanvas {
     #width = 300;
     #height = 150;
+    #pxSize;
+    #node;
     globalAlpha = 1.0;
     fillStyle = new ARGBHexColor("#ff000000");
     strokeStyle = new ARGBHexColor("#ff000000");
-    #pxSize;
-    #node;
     constructor(configs, pxSize = Vec2.create({ x: 2, y: 2 })) {
         this.#node = UiBox.create();
         this.#node.position.offset.copy(Vec2.create({ x: 0, y: 0 }));
         this.#node.parent = ui;
         this.#node.name = "canvas";
-        this.#node.visible = false;
+        this.#node.backgroundOpacity = 0;
         Object.assign(this, configs);
         this.#pxSize = pxSize;
     }
@@ -352,25 +352,25 @@ class InkUICanvas {
      */
     #traversePixels(callback) {
         if (!this.#node.children.length) return;
-        function traverse(node) {
-            callback(node);
-            node.children.forEach(traverse);
+        function traverse(node, parent) {
+            callback(node, parent);
+            for (var child of node.children) traverse(child, parent);
         };
-        this.#node.children.forEach(traverse);
+        for (var child of this.#node.children) traverse(child, this);
     }
     /**
      * @description 创建像素点
      * @param {number} x 图形相对于画布左上角的offset.x
      * @param {number} y 图形相对于画布左上角的offset.y
      * @param {any} style 填充造型/描边造型(fillStyle/strokeStyle)
-     * @paran {UiBox|UiImage|UiInput|UiScale|UiText} parent 图形父节点
+     * @param {UiBox|UiImage|UiInput|UiScale|UiText} parent 图形父节点
      */
     #createPixel(x, y, style, parent = this.#node) {
         var pixel = UiBox.create();
         pixel.parent = parent;
         pixel.size.offset.copy(this.#pxSize);
         pixel.position.offset.copy(Vec2.create({ x, y }));
-        if (x >= this.#width || y >= this.#height) pixel.visible = false;
+        if ((parent.position.offset.x + x) >= this.#width || (parent.position.offset.y + y) >= this.#height) pixel.visible = false;
         if (style instanceof Color || typeof style === "string") {
             if (typeof style === "string") style = ColorCode[style].toRGBAColor();
             else if (!(style instanceof RGBAColor)) style = style.toRGBAColor();
@@ -383,8 +383,8 @@ class InkUICanvas {
      * @description 刷新显示
      */
     refresh() {
-        this.#traversePixels(function (pixel) {
-            if (pixel.position.offset.x >= this.#width || pixel.position.offset.y >= this.#height) pixel.visible = false;
+        this.#traversePixels(function (pixel, parent) {
+            if ((pixel.parent.position.offset.x + pixel.position.offset.x) >= parent.width || (pixel.parent.position.offset.y + pixel.position.offset.y) >= parent.height) pixel.visible = false;
             else pixel.visible = true;
         });
     }
@@ -399,7 +399,7 @@ class InkUICanvas {
         var parent = UiBox.create();
         parent.parent = this.#node;
         parent.name = "rectangle";
-        parent.visible = false;
+        parent.backgroundOpacity = 0;
         parent.position.offset.copy(Vec2.create({ x, y }));
         for (var i = 0; i < width; i += this.#pxSize.x)
             for (var j = 0; j < height; j += this.#pxSize.y)
