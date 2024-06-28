@@ -32,7 +32,7 @@ class InkUICanvas {
             if (color instanceof RGBColor) color = color.toRGBAColor();
             else if (color instanceof RGBHexColor) color = color.toRGBAColor();
             else if (color instanceof ARGBHexColor) color = color.toRGBAColor();
-            else if (typeof color === "string") color = ColorCode[color];
+            else if (typeof color === "string") color = ColorCode[color].toRGBAColor();
             pixel.backgroundColor = Vec3.create({ r: color.r, g: color.g, b: color.b });
             pixel.backgroundOpacity = color.a / 255 * this.globalAlpha;
         }
