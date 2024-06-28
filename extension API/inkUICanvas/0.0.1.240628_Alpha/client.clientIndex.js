@@ -316,8 +316,6 @@ const ColorCode = {
  * ##### position为固定位置(offset)。
  */
 class InkUICanvas {
-    #width = 300;
-    #height = 150;
     #pxSize;
     #node;
     globalAlpha = 1.0;
@@ -326,6 +324,7 @@ class InkUICanvas {
     constructor(configs, pxSize = Vec2.create({ x: 2, y: 2 })) {
         this.#node = UiBox.create();
         this.#node.position.offset.copy(Vec2.create({ x: 0, y: 0 }));
+        this.#node.size.offset.copy(Vec2.create({ x: 300, y: 150 }));
         this.#node.parent = ui;
         this.#node.name = "canvas";
         this.#node.backgroundOpacity = 0;
@@ -335,17 +334,26 @@ class InkUICanvas {
     get pxSize() { return this.#pxSize; }
     get position() { return this.#node.position.offset; }
     set position(x) { this.#node.position.offset.copy(x); }
-    get width() { return this.#width; }
-    get height() { return this.#height; }
+    get width() { return this.#node.size.offset.x; }
     set width(x) {
-        this.#width = x;
+        this.#node.size.offset.x = x;
         this.refresh();
     }
+    get height() { return this.#node.size.offset.y; }
     set height(x) {
-        this.#height = x;
+        this.#node.size.offset.y = x;
         this.refresh();
     }
     get pixels() { return this.#node.children; }
+    /**
+     * @description 设置画布大小
+     * @param {any} size 大小（{ width: 宽度, height: 高度 }，可以单独设置一个）
+     */
+    setSize(size) {
+        if (size.width) this.#node.size.offset.x = size.width;
+        if (size.height) this.#node.size.offset.y = size.height;
+        this.refresh();
+    }
     /**
      * @description 遍历像素点
      * @param {any} callback 对每个像素点运行的回调函数
@@ -368,9 +376,10 @@ class InkUICanvas {
     #createPixel(x, y, style, parent = this.#node) {
         var pixel = UiBox.create();
         pixel.parent = parent;
+        pixel.name = "pixel";
         pixel.size.offset.copy(this.#pxSize);
         pixel.position.offset.copy(Vec2.create({ x, y }));
-        if ((parent.position.offset.x + x) >= this.#width || (parent.position.offset.y + y) >= this.#height) pixel.visible = false;
+        if ((parent.position.offset.x + x) >= this.width || (parent.position.offset.y + y) >= this.height) pixel.visible = false;
         if (style instanceof Color || typeof style === "string") {
             if (typeof style === "string") style = ColorCode[style].toRGBAColor();
             else if (!(style instanceof RGBAColor)) style = style.toRGBAColor();
@@ -384,6 +393,7 @@ class InkUICanvas {
      */
     refresh() {
         this.#traversePixels(function (pixel, parent) {
+            if (pixel.name !== "pixel") return;
             if ((pixel.parent.position.offset.x + pixel.position.offset.x) >= parent.width || (pixel.parent.position.offset.y + pixel.position.offset.y) >= parent.height) pixel.visible = false;
             else pixel.visible = true;
         });
