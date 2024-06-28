@@ -329,7 +329,7 @@ class InkUICanvas {
         this.#node.position.offset.copy(Vec2.create({ x: 0, y: 0 }));
         this.#node.parent = ui;
         this.#node.name = "canvas";
-        this.#node.backgroundOpacity = 0;
+        this.#node.visible = false;
         Object.assign(this, configs);
         this.#pxSize = pxSize;
     }
@@ -400,7 +400,7 @@ class InkUICanvas {
         var parent = UiBox.create();
         parent.parent = this.#node;
         parent.name = "rectangle";
-        parent.backgroundOpacity = 0;
+        parent.visible = false;
         parent.position.offset.copy(Vec2.create({ x, y }));
         for (var i = 0; i < width; i += this.#pxSize.x)
             for (var j = 0; j < height; j += this.#pxSize.y)
