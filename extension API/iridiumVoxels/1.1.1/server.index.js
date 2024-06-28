@@ -2,7 +2,7 @@
 //@name     Iridium Voxels
 //@class    Voxels API
 //@parent   Core
-//@version  v1.1.0
+//@version  v1.1.1
 //@author   L.W.Kevin0wvf
 //@license  MIT
 //Copyright (c) 2024, L.W.Kevin0wvf
