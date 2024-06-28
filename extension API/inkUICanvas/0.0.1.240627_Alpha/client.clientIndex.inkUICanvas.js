@@ -27,14 +27,11 @@ class InkUICanvas {
         pixel.position.offset.x = this.position.x + x;
         pixel.position.offset.y = this.position.y + y;
         if ((this.position.x + x) >= this.width || (this.position.y + y) >= this.height) pixel.visible = false;
-        if (style instanceof Color || typeof color === "string") {
-            var color = style;
-            if (color instanceof RGBColor) color = color.toRGBAColor();
-            else if (color instanceof RGBHexColor) color = color.toRGBAColor();
-            else if (color instanceof ARGBHexColor) color = color.toRGBAColor();
-            else if (typeof color === "string") color = ColorCode[color].toRGBAColor();
-            pixel.backgroundColor = Vec3.create({ r: color.r, g: color.g, b: color.b });
-            pixel.backgroundOpacity = color.a / 255 * this.globalAlpha;
+        if (style instanceof Color || typeof style === "string") {
+            if (typeof style === "string") style = ColorCode[style].toRGBAColor();
+            else if (!(style instanceof RGBAColor)) style = style.toRGBAColor();
+            pixel.backgroundColor = Vec3.create({ r: style.r, g: style.g, b: style.b });
+            pixel.backgroundOpacity = style.a / 255 * this.globalAlpha;
         }
         return pixel;
     }
