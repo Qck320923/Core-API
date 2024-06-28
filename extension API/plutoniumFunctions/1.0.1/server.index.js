@@ -2,7 +2,7 @@
 //@name     Plutonium Functions
 //@class    Functions API
 //@parent   Core
-//@version  v1.0.0
+//@version  v1.0.1
 //@author   L.W.Kevin0wvf
 //@license  MIT
 //Copyright (c) 2024, L.W.Kevin0wvf
