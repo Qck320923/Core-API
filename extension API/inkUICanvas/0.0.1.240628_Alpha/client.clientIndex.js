@@ -315,7 +315,6 @@ const ColorCode = {
  * @description “墨水”UI画布，参考HTML5中canvas的语法编写，降低入门难度。
  * ##### position为固定位置(offset)。
  */
-//还需要把width和height改为私有字段，并添加set和get方法，在set中加上检测所有像素是否超出修改后width或height或在width和height之内重新判断是否显示
 class InkUICanvas {
     #width = 300;
     #height = 150;
