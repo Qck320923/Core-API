@@ -467,5 +467,6 @@ class InkUICanvas {
     addEventListener(type, listener) {
         if (!this.#events[type]) throw new Error(`InkUICanvas Error:Unknown event "${type}"`);
         this.#events[type].push(listener);
+        return this;
     }
 }
