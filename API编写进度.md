@@ -14,7 +14,7 @@
 * 10.Carbon Core Base（2024.6.23发布）
 
 # 正在测试：
-* Ink UI Canvas - 0.0.1.240628_Alpha
+* Ink UI Canvas - 0.0.1.240702_Alpha01
 
 # 更新计划：
 * Supernova UI Animations（贝塞尔曲线型非线性动画、动画类型更新、动画功能增强）
@@ -31,6 +31,7 @@
 * Core-API使用指南（gitbook）
 
 # 将要编写：
+* Radium-Cyanide EventListener - 自定义事件监听器
 * Supernova UI Animations - UI动画
 * Tungsten Storage - storage存储
 * 【代码模板库】神岛版三维JPS寻路算法（很久之后）
