@@ -14,7 +14,7 @@ var canvas = new InkUICanvas({
         console.log("mouseup");
     });
 canvas.fillStyle = new RGBHexColor("#0000ff");
-canvas.strokeRect(128, 0, 128, 128);
+canvas.strokeRect(128, 16, 128, 128);
 canvas.fillStyle = new RGBHexColor("#ff0000");
-canvas.fillRect(0, 0, 128, 128);
+canvas.fillRect(0, 16, 128, 128);
 ```
