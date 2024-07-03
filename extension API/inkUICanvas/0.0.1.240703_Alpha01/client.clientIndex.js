@@ -321,12 +321,7 @@ class Bounds2 {
     }
     toString() { return `{ lo: { x: ${this.lo.x}, y: ${this.lo.y} }, hi: { x: ${this.hi.x}, y: ${this.hi.y} } }` }
 }
-/**
- * @typedef {Object} InkUICanvasEventsListenerParams
- * @property {Bounds2} pressBounds 点击的区域
- * @property {UiBox} pressPixel 点击的像素节点
- * @property {string} pressGraphic 点击的图形
- */
+const InkUICanvasEventsListenerParams = { "pressBounds": new Bounds2 };
 /**
  * @description “墨水”UI画布，参考HTML5中canvas的语法编写，降低入门难度。
  * ##### position为偏移量(offset)。
@@ -393,7 +388,7 @@ class InkUICanvas {
      * @param {number} y 图形相对于画布左上角的offset.y
      * @param {any} style 填充造型/描边造型(fillStyle/strokeStyle)
      * @param {Vec2} size 像素点大小
-     * @param {UiBox} parent 图形父节点
+     * @param {UiBox|UiImage|UiInput|UiScale|UiText} parent 图形父节点
      */
     #createPixel(x, y, style, size = this.#pxSize, parent = this.#node) {
         var pixel = UiBox.create();
@@ -418,9 +413,7 @@ class InkUICanvas {
                         x: pixel.position.offset.x + pixel.parent.position.offset.x + pixel.size.offset.x,
                         y: pixel.position.offset.y + pixel.parent.position.offset.y + pixel.size.offset.y
                     })
-                ),
-                pressPixel: pixel,
-                pressGraphic: pixel.parent.name
+                )
             });
         });
         pixel.events.on("pointerup", () => {
@@ -433,9 +426,7 @@ class InkUICanvas {
                         x: pixel.position.offset.x + pixel.parent.position.offset.x + pixel.size.offset.x,
                         y: pixel.position.offset.y + pixel.parent.position.offset.y + pixel.size.offset.y
                     })
-                ),
-                pressPixel: pixel,
-                pressGraphic: pixel.parent.name
+                )
             });
         });
         return pixel;
@@ -453,7 +444,7 @@ class InkUICanvas {
     /**
      * @description 添加画布事件监听器
      * @param {keyof #events} type 画布事件类型
-     * @param {(event: InkUICanvasEventsListenerParams)=>void} listener 监听函数
+     * @param {(event: InkUICanvasEventsListenerParams)=>void} listener 函数
      */
     addEventListener(type, listener) {
         if (!this.#events[type]) throw new Error(`InkUICanvas Error:Unknown event "${type}"`);
