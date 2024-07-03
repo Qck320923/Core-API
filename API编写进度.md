@@ -14,7 +14,7 @@
 * 10.Carbon Core Base（2024.6.23发布）
 
 # 正在测试：
-* Ink UI Canvas - 0.0.1.240702_Alpha01
+* Ink UI Canvas - 0.0.1.240703_Alpha01
 
 # 更新计划：
 * Supernova UI Animations（贝塞尔曲线型非线性动画、动画类型更新、动画功能增强）
