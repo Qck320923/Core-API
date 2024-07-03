@@ -13,7 +13,7 @@ v0.0.1.240627_Alpha - 完成部分基础代码。
 v0.0.1.240628_Alpha - 修复部分bug，添加部分代码，优化像素查找、调用。
 v0.0.1.240702_Alpha01 - 修复了像素长或宽不是长方形长或宽因数时大小比传入参数大的问题，改进显示像素的机制，pxSize重新定义为“最大像素大小”，如果图形还有空缺部分无法用最大像素大小的像素填充，则使用比最大像素大小小的像素填充。
 v0.0.1.240702_Alpha02 - 加入了添加画布事件监听器的功能，mousedown、mouseup事件，和点击区域(pressBounds)参数。
-v0.0.1.240703_Alpha01 - 加入了描边长方形(strokeRect)函数。
+v0.0.1.240703_Alpha01 - 加入了描边长方形(strokeRect)函数，修复可以在画布上x轴比0小或y轴比0小的坐标绘制像素点的问题。
 */
 const EPSILON$2 = Number.EPSILON;/*容差*/
 /*
@@ -396,7 +396,7 @@ class InkUICanvas {
         pixel.name = "pixel";
         pixel.size.offset.copy(size);
         pixel.position.offset.copy(Vec2.create({ x, y }));
-        if ((parent.position.offset.x + x) >= this.width || (parent.position.offset.y + y) >= this.height) pixel.visible = false;
+        if ((parent.position.offset.x + x) < 0 || (parent.position.offset.x + x) >= this.width || (parent.position.offset.y + y) < 0 || (parent.position.offset.y + y) >= this.height) pixel.visible = false;
         if (style instanceof Color || typeof style === "string") {
             if (typeof style === "string") style = ColorCode[style].toRGBAColor();
             else if (!(style instanceof RGBAColor)) style = style.toRGBAColor();
@@ -437,7 +437,7 @@ class InkUICanvas {
     refresh() {
         this.#traversePixels(function (pixel, parent) {
             if (pixel.name !== "pixel") return;
-            if ((pixel.parent.position.offset.x + pixel.position.offset.x) >= parent.width || (pixel.parent.position.offset.y + pixel.position.offset.y) >= parent.height) pixel.visible = false;
+            if ((pixel.parent.position.offset.x + pixel.position.offset.x) < 0 || (pixel.parent.position.offset.x + pixel.position.offset.x) >= parent.width || (pixel.parent.position.offset.y + pixel.position.offset.y) < 0 || (pixel.parent.position.offset.y + pixel.position.offset.y) >= parent.height) pixel.visible = false;
             else pixel.visible = true;
         });
     }
