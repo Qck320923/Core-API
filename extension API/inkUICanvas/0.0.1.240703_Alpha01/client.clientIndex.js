@@ -2,7 +2,7 @@
 //@name     InkUICanvas
 //@class    UICanvas API
 //@parent   Core
-//@version  v0.0.1.240702_Alpha02
+//@version  v0.0.1.240703_Alpha01
 //@author   L.W.Kevin0wvf
 //@license  MIT
 //Copyright (c) 2024, L.W.Kevin0wvf
@@ -13,6 +13,7 @@ v0.0.1.240627_Alpha - 完成部分基础代码。
 v0.0.1.240628_Alpha - 修复部分bug，添加部分代码，优化像素查找、调用。
 v0.0.1.240702_Alpha01 - 修复了像素长或宽不是长方形长或宽因数时大小比传入参数大的问题，改进显示像素的机制，pxSize重新定义为“最大像素大小”，如果图形还有空缺部分无法用最大像素大小的像素填充，则使用比最大像素大小小的像素填充。
 v0.0.1.240702_Alpha02 - 加入了添加画布事件监听器的功能，mousedown、mouseup事件，和点击区域(pressBounds)参数。
+v0.0.1.240703_Alpha01 - 加入了描边长方形(strokeRect)函数。
 */
 const EPSILON$2 = Number.EPSILON;/*容差*/
 /*
