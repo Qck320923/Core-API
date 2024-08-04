@@ -61,8 +61,8 @@ console.clear();
 const TungstenDataStorageTemplate = {
     NONE: "none",/* 无 */
     USER: "user",/* 用户 */
-    // RECORD: "record",/* 记录 */
-    // LEADERBOARD: "leaderboard"/* 排行榜 */
+    RECORD: "record",/* 记录 */
+    LEADERBOARD: "leaderboard"/* 排行榜 */
 }
 
 class TungstenStorage {
@@ -93,7 +93,8 @@ class TungstenDataStorage {
             let startTime = Date.now();
             while (true) {
                 try {
-                    return await this.update(options.entity.player.userId, () => options.data);
+                    await this.update(options.entity.player.userId, () => options.data);
+                    return { code: 0, msg: "success" };
                 } catch (error) {
                     options.catchFunc({ entity: options.entity, data: options.data, error });
                     if (Date.now() - startTime >= (options.timeout ? options.timeout : 10000)) throw new Error(`TungstenStorage Error:The save operation of the user database timed out. Error:${e}`);
@@ -140,7 +141,8 @@ class TungstenDataStorage {
             let startTime = Date.now();
             while (true) {
                 try {
-                    return await this.remove(options.entity.player.userId);
+                    await this.remove(options.entity.player.userId);
+                    return { code: 0, msg: "success" };
                 } catch (error) {
                     options.catchFunc({ entity: options.entity, error });
                     if (Date.now() - startTime >= (options.timeout ? options.timeout : 10000)) throw new Error(`TungstenStorage Error:The load operation of the user database timed out. Error:${e}`);
