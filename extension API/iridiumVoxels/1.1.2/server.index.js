@@ -174,8 +174,7 @@ class IridiumVoxels {
      * @returns {number[]}
      */
     id(...name) {
-        for (var i = 0; i < name.length; i++) name[i] = voxels.id(name[i]);
-        return name;
+        return name.map((v) => voxels.id(v));
     }
     /**
      * @description 获取方块name
@@ -183,8 +182,7 @@ class IridiumVoxels {
      * @returns {number[]}
      */
     name(...id) {
-        for (var i = 0; i < id.length; i++) id[i] = voxels.name(id[i]);
-        return id;
+        return id.map((v) => voxels.name(v));
     }
     /**
      * @description 获取方块数据的最小区域
