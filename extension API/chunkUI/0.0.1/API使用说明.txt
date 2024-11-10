@@ -6,7 +6,7 @@
 关键帧动画样例：
 var text = chunkUI.uiTools.createChildUiNode(UiText, { name: "textA", textContent: "UI文本" }, ui);
 var animate = chunkUI.uiTools.animation.keyframesAnimate([
-	{ keyframe: [{ node: text, frame: { textFontSize: 4 } }] },
+    { keyframe: [{ node: text, frame: { textFontSize: 4 } }] },
     { keyframe: [{ node: text, frame: { textFontSize: 40 } }] }
 ], {
     iterations: 1,
