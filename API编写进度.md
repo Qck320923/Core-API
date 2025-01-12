@@ -7,7 +7,7 @@
   * ①Frames Animate（2024.6.1发布）
   * ②Keyframes Animate（不详，忘了）
   * ③Nonlinear Ease Function Frames Animate（2024.6.20发布，含有一些问题，已弃用）
-  * ④Nonlinear Ease Function Keyframes Animate（2025.1.12发布）
+  * ④Ease Function Keyframes Animate（2025.1.12发布）
 * 6.Flerovium Dialog（2024.6.7发布）
 * 7.Voxel Animate（2024.6.9发布）
 * 8.Tungsten Storage（2024.6.11发布）
